@@ -8,13 +8,13 @@ public class Item {
     private int codItem;
     private double desconto;
     private int quantidade;
-    private List<Produto> produtos = new ArrayList<>();
+    private Produto produto;
 
-    public Item(int codItem, double desconto, int quantidade, List<Produto> produtos) {
+    public Item(int codItem, double desconto, int quantidade, Produto produto) {
         this.codItem = codItem;
         this.desconto = desconto;
         this.quantidade = quantidade;
-        this.produtos = produtos;
+        this.produto = produto;
     }
 
     public Item(int codItem, double desconto, int quantidade) {
@@ -50,12 +50,12 @@ public class Item {
         this.quantidade = quantidade;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Item {
                 "codItem=" + codItem +
                 ", desconto=" + desconto +
                 ", quantidade=" + quantidade +
-                ", produtos=" + produtos +
+                ", produto=" + produto +
                 '}';
     }
 }

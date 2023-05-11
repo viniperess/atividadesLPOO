@@ -10,6 +10,8 @@ public class Pedido {
     private Calendar data;
     private double valor;
 
+    private Tipo tipo;
+
     private Vendedor vendedor;
 
     private List<Item> itens = new ArrayList<>();
@@ -21,6 +23,7 @@ public class Pedido {
         this.valor = valor;
         this.vendedor = vendedor;
         this.itens = itens;
+        this.tipo = Tipo.PENDENTE;
     }
 
     public Pedido(int numero, Calendar data, double valor, Vendedor vendedor) {
@@ -28,6 +31,7 @@ public class Pedido {
         this.data = data;
         this.valor = valor;
         this.vendedor = vendedor;
+        this.tipo = Tipo.PENDENTE;
     }
 
     public Pedido() {
@@ -73,12 +77,21 @@ public class Pedido {
         this.itens = itens;
     }
 
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public String toString() {
         return "\nPedido{" +
                 "numero=" + numero +
                 ", data=" + data +
                 ", valor=" + valor +
+                ", tipo=" + tipo +
                 ", vendedor=" + vendedor +
                 ", itens=" + itens +
                 '}';
